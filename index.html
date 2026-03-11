@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Programming Contest Tracker</title>
+
+<style>
+
+body{
+font-family: Arial;
+background: linear-gradient(135deg,#667eea,#764ba2);
+text-align:center;
+color:white;
+margin-top:50px;
+}
+
+.container{
+background:white;
+color:black;
+width:500px;
+margin:auto;
+padding:20px;
+border-radius:10px;
+box-shadow:0px 5px 15px rgba(0,0,0,0.2);
+}
+
+h1{
+margin-bottom:20px;
+}
+
+input,select{
+padding:10px;
+margin:5px;
+width:80%;
+border-radius:5px;
+border:1px solid #ccc;
+}
+
+button{
+padding:10px 20px;
+margin-top:10px;
+background:#667eea;
+color:white;
+border:none;
+border-radius:5px;
+cursor:pointer;
+}
+
+button:hover{
+background:#5563d6;
+}
+
+table{
+margin:auto;
+margin-top:20px;
+border-collapse:collapse;
+width:100%;
+}
+
+th{
+background:#667eea;
+color:white;
+}
+
+th,td{
+padding:10px;
+border:1px solid #ddd;
+}
+
+tr:nth-child(even){
+background:#f2f2f2;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Programming Contest Tracker</h1>
+
+<input type="text" id="problem" placeholder="Problem Name">
+
+<br>
+
+<select id="difficulty">
+<option>Easy</option>
+<option>Medium</option>
+<option>Hard</option>
+</select>
+
+<br>
+
+<input type="number" id="time" placeholder="Time (minutes)">
+
+<br>
+
+<button onclick="addProblem()">Add Problem</button>
+
+<table id="table">
+
+<tr>
+<th>Problem</th>
+<th>Difficulty</th>
+<th>Time</th>
+</tr>
+
+</table>
+
+</div>
+
+<script>
+
+function addProblem(){
+
+let problem=document.getElementById("problem").value;
+let difficulty=document.getElementById("difficulty").value;
+let time=document.getElementById("time").value;
+
+let table=document.getElementById("table");
+
+let row=table.insertRow();
+
+row.insertCell(0).innerHTML=problem;
+row.insertCell(1).innerHTML=difficulty;
+row.insertCell(2).innerHTML=time;
+
+}
+
+</script>
+
+</body>
+</html>
